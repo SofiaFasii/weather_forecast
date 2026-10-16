@@ -1,0 +1,104 @@
+/* ===== MOBILE (база) ===== */
+.header {
+  background: #fff;
+}
+
+.header__inner {
+  display: flex;
+  flex-wrap: wrap;            /* щоб меню впало вниз під лого */
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+.header__toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.chevron {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+.chevron--up {
+  transform: rotate(-135deg);
+}
+
+/* меню на мобільному сховане */
+.header__menu {
+  display: none;
+  flex-basis: 100%;           /* на всю ширину під лого */
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 16px;
+}
+.header__menu--open {
+  display: flex;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-signup {
+  background: #ffa65c;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* ===== TABLET / DESKTOP ===== */
+@media (min-width: 768px) {
+  .header__inner {
+    flex-wrap: nowrap;
+    padding: 16px 40px;
+  }
+
+  .header__toggle {
+    display: none;            /* кнопка Menu зникає */
+  }
+
+  .header__menu {
+    display: flex;            /* меню завжди видно */
+    flex-basis: auto;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    margin-left: 60px;
+  }
+
+  .nav {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+.aaa{
+    width: 100px;
+    height: 100px;
+}
