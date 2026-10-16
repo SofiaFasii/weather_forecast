@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css"
 import { GlobalStyle } from "./css/globalStyle.styled";
 import Searchbar from "./components/Searchbar";
 import CardWeather from "./components/CardWeather";
