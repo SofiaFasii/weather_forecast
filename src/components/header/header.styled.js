@@ -128,5 +128,6 @@ export const AvatarImg = styled.img`
     width: 40px;
     @media(min-width: 1440px){
         width: 50px;
+        
     }
 `
