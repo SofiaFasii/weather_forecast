@@ -1,10 +1,18 @@
 import { useState } from "react";
-import { HeaderWrapper, HeaderInner, Logo, HToggleBtn, HeaderMenu, Nav, HeaderAccount, SignUpBtn, AvatarImg} from './header.styled'
-import logo from '../../img/logo.svg'
-import avatar from '../../img/avatar.svg'
+import { HeaderWrapper, HeaderInner, Logo, HToggleBtn, HeaderMenu, Nav, HeaderAccount, SignUpBtn, AvatarImg} from './header.styled';
+import logo from '../../img/logo.svg';
+import avatar from '../../img/avatar.svg';
+import SignUpModal from "./SignUpModal";
+
 
 export default function Header(){
   const [ isOpen, setIsOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [user, setUser] = useState(() => JSON.parse(localStorage.getItem("currentUser")))
+  const openModal = () => {
+    setIsOpen(false)
+    setIsModalOpen(true)
+  }
   return(
     <HeaderWrapper>
       <HeaderInner>
@@ -20,10 +28,15 @@ export default function Header(){
           </Nav>
           <HeaderAccount>
             <AvatarImg src={avatar} alt="Avatar"/>
-            <SignUpBtn>Sign Up</SignUpBtn>
+            {user ? <p>{user.username}</p> : <SignUpBtn onClick={openModal}>Sign Up</SignUpBtn>}
           </HeaderAccount>
         </HeaderMenu>
       </HeaderInner>
+      <SignUpModal 
+        isModalOpen={isModalOpen}
+        onModalClose={() => setIsModalOpen(false)}
+        setUser={setUser}
+      />
     </HeaderWrapper>
   )
 }
