@@ -18,7 +18,6 @@ export const Overlay = styled.div`
 `
 
 export const Modal = styled.div`
-    font-family: "Montserrat", sans-serif;
     text-align: center;
     display: flex;
     flex-direction: column;

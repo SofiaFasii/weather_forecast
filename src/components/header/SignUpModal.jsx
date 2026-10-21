@@ -36,15 +36,15 @@ export default function SignUpModal({isModalOpen, onModalClose, setUser}){
                 <Form onSubmit={handleSubmit}>
                     <Label>
                         Username
-                        <Input name="username" placeholder="Username" required/>
+                        <Input name="username" placeholder="Username" autoComplete="new-password" required/>
                     </Label>
                     <Label>
                         E-Mail
-                        <Input name="email" type="email" placeholder="E-Mail" required/>
+                        <Input name="email" type="email" placeholder="E-Mail" autoComplete="new-password" required/>
                     </Label>
                     <Label>
                         Password
-                        <Input name="password" type="password" placeholder="Password" required/>
+                        <Input name="password" type="password" placeholder="Password" autoComplete="new-password" required/>
                     </Label>
                     <SubmitBtn>Sign up</SubmitBtn>
                 </Form>

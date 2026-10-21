@@ -4,7 +4,6 @@ import logo from '../../img/logo.svg';
 import avatar from '../../img/avatar.svg';
 import SignUpModal from "./SignUpModal";
 
-
 export default function Header(){
   const [ isOpen, setIsOpen] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -37,6 +36,9 @@ export default function Header(){
         onModalClose={() => setIsModalOpen(false)}
         setUser={setUser}
       />
+      {/* <button onClick={() => { localStorage.clear(); setUser(null); }}>
+        Clear
+      </button> */}
     </HeaderWrapper>
   )
 }

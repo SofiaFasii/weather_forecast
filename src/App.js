@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { GlobalStyle } from "./css/globalStyle.styled";
-import Searchbar from "./components/Searchbar";
 import CardWeather from "./components/CardWeather";
 import Header from "./components/header/Header";
-import HeroSection from "./components/main/HeroSection";
+import HeroSection from "./components/main/Hero/HeroSection";
 
 const URL1 = 'https://newsapi.org/v2'
 const API_KEY1 = '8101df0cbacf44d0975ac871cd4e8c34'
@@ -23,6 +22,7 @@ function App() {
   }
   const handleSubmit = (e) => {
     e.preventDefault()
+    if(!filter.trim()) return;
     const getWeather = async () => {
       try{
         const resp = await fetch(`${URL3}data/2.5/weather?q=${filter}&units=metric&appid=${API_KEY3}`)
@@ -71,16 +71,12 @@ function App() {
     <div>
       <GlobalStyle/>
       <Header/>
-      <HeroSection/>
-      {/* <form onSubmit={handleSubmit}>
-        <input type="text" value={filter} onChange={handleChange} placeholder=""/>
-        <button>search</button>
-      </form>
+      <HeroSection handleSubmit={handleSubmit} handleChange={handleChange} filter={filter}/>
       <div>
         {weather && <CardWeather weather={weather}/>}
-      </div> */}
+      </div>
       
-    
+      
     </div>
   );
 }
