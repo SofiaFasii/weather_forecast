@@ -1,6 +1,6 @@
 import { HeroWrapper, HeroContainer, Title, TextContainer, Text, Line, DateBox, Input, Form, SearchBtn} from "./hero.styled"
 
-export default function HeroSection({handleSubmit, handleChange, filter}){
+export default function HeroSection({handleSubmit, handleChange, cityName}){
     const date = new Date();
     const monthYear = date.toLocaleDateString('en-US', {month: "long", year: "numeric"})
     const weekday = date.toLocaleDateString('en-US', {weekday: "long"})
@@ -19,7 +19,7 @@ export default function HeroSection({handleSubmit, handleChange, filter}){
                     </DateBox>
                 </TextContainer>
                 <Form onSubmit={handleSubmit}>
-                    <Input value={filter} onChange={handleChange} placeholder="Search location..."/>
+                    <Input value={cityName} onChange={handleChange} placeholder="Search location..."/>
                     <SearchBtn/>
                 </Form>
             </HeroContainer>

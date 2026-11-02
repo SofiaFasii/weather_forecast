@@ -86,9 +86,6 @@ export const Nav = styled.nav`
     display: flex;
     flex-direction: column;
     gap: 20px;
-    a:hover{
-        text-decoration: underline;
-    }
     @media(min-width: 768px){
         flex-direction: row;
         gap: 45px;
